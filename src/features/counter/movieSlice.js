@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  likedMovies: new Set()
+  likedMovies: new Set([1,2,3])
 };
 
 export const movieSlice = createSlice({
@@ -12,13 +12,13 @@ export const movieSlice = createSlice({
       state.likedMovies.add(action.payload);
     },
     removeMovie: (state, action) => {
-      state.value.delete(action.payload);
+      state.likedMovies.delete(action.payload);
     }
   }
 });
 
 export const { addMovies, removeMovie } = movieSlice.actions;
 
-export const getLikedMovie = (state) => state.counter.likedMovies;
+export const getLikedMovie = (state) => state.movie.likedMovies;
 
 export default movieSlice.reducer;
