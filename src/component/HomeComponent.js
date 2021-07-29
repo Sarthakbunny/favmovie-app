@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { API, token } from "../shared/API";
 import CardComponent from './CardComponent';
+import { Carousel } from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function HomeComponent() {
     const [UAMovies, setUAMovies] = useState([]);
@@ -25,21 +27,39 @@ function HomeComponent() {
             <div className="movie-block">
                 <h1>UA Movies</h1>
                 <div className="movie-container">
+                    <Carousel
+                        infiniteLoop
+                        centerMode
+                        centerSlidePercentage={60}
+                        showIndicators={false}
+                    >
                     {UAMovies.map((movie) => {
                         return (
                             <CardComponent {...movie}/>
                         );
                     })}
+                    </Carousel>
                 </div>
             </div>
             <div className="movie-block">
                 <h1>A Movies</h1>
                 <div className="movie-container">
+                    <Carousel
+                        infiniteLoop
+                        centerMode
+                        centerSlidePercentage={60}
+                        showIndicators={false}
+                        autoFocus={true}
+                        autoPlay={true}
+                        swipeable={true}
+                        emulateTouch={true}
+                    >
                     {AMovies.map((movie) => {
                         return (
                             <CardComponent {...movie}/>
                         );
                     })}
+                    </Carousel>
                 </div>
             </div>
         </div>

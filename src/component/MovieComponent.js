@@ -8,7 +8,6 @@ function MovieComponent() {
         backdrop: '',
         cast: [],
         genres: [],
-        title: '',
         classification: '',
         director: '',
         imdb_rating: '',

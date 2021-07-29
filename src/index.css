@@ -46,15 +46,12 @@ header {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
-    margin: 1rem;
-    width: 300px;
     text-decoration: none;
     color: white;
 }
 
 .movie img {
-    object-fit: cover;
-    height: 400px;
+    object-fit: contain;
     width: 100%;
     max-width: 100%;
 }
@@ -85,7 +82,6 @@ header {
     bottom: 0;
     left:0;
     right: 0;
-    width: 300px;
     transform: translateY(102%);
     transition: transform 0.3s ease-in-out;
 }
